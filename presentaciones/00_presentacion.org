@@ -1,0 +1,195 @@
+#+title: Presentación del curso
+#+subtitle: Fundamentos y Técnicas de Seguridad para Aplicaciones
+#+author: Gunnar Wolf
+#+email: gwolf@gwolf.org
+#+date: 
+#+startup: beamer
+#+latex_class: beamer
+#+beamer_theme: Berkeley
+#+beamer_color_theme: lily
+# #+latex_header: \pgfdeclareimage[height=0.185\textheight]{img/logo_gw.png}{img/logo_gw.png}\logo{\pgfuseimage{img/logo_gw.png}}
+#+latex_header: \setbeamercolor{background canvas}{bg=}
+#+latex_header: \usepackage[absolute,overlay]{textpos}
+#+latex_header: \usepackage{yfonts}
+#+latex_header: \usepackage{tikz}
+#+latex_header: \usepackage[normalem]{ulem}
+#+latex_header: \definecolor{UnamBlue}{RGB}{3,40,109}
+#+latex_header: \definecolor{gris1}{RGB}{40,40,40}
+#+latex_header: \definecolor{gris2}{RGB}{80,80,80}
+#+latex_header: \definecolor{gris3}{RGB}{120,120,120}
+# #+latex_header: \usecolortheme[named=UnamBlue]{structure}
+#+latex_header: \setbeamercolor{alerted text}{fg=red}
+#+latex_header: \setbeamertemplate{footline}[slide number]
+#+latex_header: \definecolor{string}{rgb}{0,0.6,0} \definecolor{shadow}{rgb}{0.5,0.5,0.5} \definecolor{keyword}{rgb}{0.58,0,0.82} \definecolor{identifier}{rgb}{0,0,0.7}
+#+latex_header: \setbeamerfont{author}{size=\footnotesize}
+#+latex_header: \newcommand{\attrib}[3]{ \begin{textblock*}{150mm}[1,1](125mm,93mm)  {\tiny \hfill \textcolor{gray}{\href{#3}{#1 \textcolor{lightgray}{(#2)}}}} \end{textblock*} }
+#+latex_header: \newcommand{\img}[4]{ \includegraphics[width=\textwidth]{#1} \attrib{#2}{#3}{#4} }
+#+latex_header: \newcommand*\circulo[1]{\tikz[baseline=(char.base)]{ \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+#+latex_header: \graphicspath{ {./img/} }
+#+latex_header_extra: \AtBeginSection[]{ \begin{frame}<beamer> \frametitle{Índice} \tableofcontents[currentsection] \end{frame} }
+#+latex_header: \newcommand{\Smiley}{\tikz[baseline=-0.75ex]{ \draw circle (2mm); \node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {}; \node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {}; \draw (-145:0.9mm) arc (-120:-60:1.5mm); } }
+#+latex_header: \newcommand{\frownie}{\tikz[baseline=-0.75ex]{\draw circle (2mm); \node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {}; \node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {}; \draw (-145:0.9mm) arc (120:60:1.5mm); } }
+#+latex_header: \newcommand{\neutranie}{\tikz[baseline=-0.75ex]{\draw circle (2mm); \node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {}; \node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {}; \draw (-135:0.9mm) -- (-45:0.9mm); } }
+#+OPTIONS:   H:2 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+
+* Punto de partida
+
+** ¡Hola! Soy Gunnar, y soy programador
+\centering
+#+attr_latex: :width 0.9\textwidth
+[[./gwolf_librero.jpg]]
+\pause \scriptsize
+
+(Aquí es cuando todos dicen /``¡Hola Gunnar!''/)
+
+** Mis coordenadas
+\centering Datos personales:
+
+- Nombre :: Gunnar Eyal Wolf Iszaevich
+- Email :: gwolf@gwolf.org
+- Ubicación :: Instituto de Investigaciones Económicas UNAM (Secretaría
+  Técnica)
+- Teléfono :: 55-5623-0154
+
+\vskip 1.5em De este curso:
+
+- Repositorio Git ::
+  #+begin_export latex
+  { \small\url{https://github.com/gwolf/seg_aplic_2026-1} }
+  #+end_export
+
+  Importante: *¿Cómo se llevan con Git?*
+
+** Horario / calendario
+- Martes y jueves, 8:30–10:00 (3hr semanales)
+- Del 12 de agosto al 27 de noviembre de 2025 (16 semanas), /excepto/:
+  - 16 de septiembre (feriado)
+  - 18 de septiembre y 6 de noviembre[fn:: A confirmar este último. ¿Tal
+    vez los veo a distancia?] (congreso)
+- 48 - 4.5 = *43.5* horas previstas efectivas de cursado
+
+* El cursado: Revisión temática
+
+** Generalidades
+- Campo de conocimiento :: Redes y seguridad en cómputo
+- Semestre :: 2°–3°
+- Objetivo general :: Que el alumno identifique las principales amenazas a
+  la seguridad informática, y conozca las principales técnicas para
+  reconocerlas y evitarlas
+- Unidades ::
+  1. Introducción a la seguridad de la información
+  2. El panorama de la seguridad informática hoy
+  3. Tipos de ataque
+  4. Prácticas de programación segura
+
+
+** 1. Introducción a la seguridad de la información
+#+latex: \begin{columns} \begin{column}{0.3\textwidth}
+#+attr_latex: :width \textwidth
+[[./candados.jpg]]
+#+latex: \end{column} \begin{column}{0.7\textwidth}
+1. ¿Qué es seguridad de la información?
+2. Características de un sistema seguro
+3. Propiedades de la seguridad de la información
+4. Seguridad informática capa a capa
+5. Evolución de los retos de seguridad informática sobre el desarrollo histórico de la computación
+#+latex: \end{column} \end{columns}
+
+#+latex: \vskip 1em \raggedleft \scriptsize Imagen: propia
+
+** 2. El panorama de la seguridad informática hoy
+#+latex: \begin{columns} \begin{column}{0.7\textwidth}
+1. Modelos de riesgo / Modelos de ataque
+2. Manejo y respuesta a vulnerabilidades
+3. Gestión de permisos y privilegios
+   1. Principio del menor privilegio
+4. Bases de datos de vulnerabilidades y debilidades
+   1. CVE — Common Vulnerabilities and Exposure
+   2. CWE — Common Weakness Enumeration
+#+latex: \end{column} \begin{column}{0.3\textwidth}
+#+attr_latex: :width \textwidth
+[[./tagcloud.png]]
+#+latex: \end{column} \end{columns}
+
+#+latex: \vskip 1em \raggedleft \scriptsize Imagen: TechNewsRadio: Updated CISSP Domains \\ \url{https://www.technewsradio.com/2015/03/updated-cissp-domains.html}
+
+** 3. Tipos de ataque
+#+latex: \begin{columns} \begin{column}{0.4\textwidth}
+#+attr_latex: :width \textwidth
+[[./attacker.jpg]]
+#+latex: \end{column} \begin{column}{0.6\textwidth}
+1. Denegación de servicio (DoS, DDoS, amplificación, reflexión)
+2. Desbordamientos (de buffer, de stack, de enteros)
+3. Inyecciones (de cadenas, SQL, objetos, código, solicitudes)
+4. Cruce de límites de confianza (XSS, CSRF)
+5. Basados en codificación
+6. Algoritmos débiles de cifrado
+#+latex: \end{column} \end{columns}
+
+#+latex: \vskip 1em \raggedleft \scriptsize Imagen: Increasing Your Digital Responsibility - Protect Yourself   \url{https://wecdsbit.blogspot.com/2017/05/increasing-your-digital-responsibility.html}
+
+** 4. Prácticas de programación segura
+#+latex: \begin{columns} \begin{column}{0.7\textwidth}
+1. Principios de diseño seguro
+2. Prácticas seguras de programación
+   1. Estándares y convenciones
+   2. Manejo seguro de datos
+   3. Manejo de errores
+   4. Manejo de información sensible (contraseñas / datos personales)
+3. Evolución de los lenguajes de programación en lo relativo a la seguridad
+4. Consideraciones de versionado y mantenibilidad
+#+latex: \end{column} \begin{column}{0.3\textwidth}
+#+attr_latex: :width \textwidth
+[[./consejos_seguridad.jpg]]
+#+latex: \vskip 6em \, \end{column} \end{columns}
+
+#+latex: \vskip 1em \raggedleft \scriptsize Imagen: Seguridad en internet – 4 consejos de seguridad básicos para tu sitio Web \url{https://www.socialfuturo.com/internet/seguridad-en-internet-4-consejos-de-seguridad-basicas-para-tu-sitio-web/}
+
+* ¿Cómo evaluaremos?
+** ¿En qué consistirá la evaluación?
+- No voy a mentirles: /¡No lo sé!/ \neutranie
+- Es la primera vez que propongo un curso a nivel posgrado... ¡No crean que
+  no impone un poco! \Smiley
+- ... ¡Pero me comprometo a ser justo y a no perjudicarlos!
+- Ya estando en nivel posgrado, creo que podremos ir acordando eso en
+  conjunto
+#+attr_latex: :height 0.4\textheight
+[[./cuaderno_eval.jpg]]
+#+latex: \vskip 1em \raggedleft \scriptsize Rúbrica para evaluar mapas mentales – Nivel intermedio \url{https://gesvinromero.com/2016/02/18/rubrica-para-evaluar-mapas-mentales-nivel-intermedio-ebook/}
+
+** Ideas para la evaluación
+- Exposición para debate de los temas que vayamos tocando
+- Tareas: Implementaciones (código) de algunos conceptos que abordemos
+  - /Prácticas/ de conceptos más simples que sea necesario reforzar
+- Algún tema más extenso a exponer, a propuesta de cada uno de ustedes
+
+** El elefante en el cuarto: ¿LLMs / GenAI / GPT / como-le-digas?
+#+latex: \begin{columns} \begin{column}{0.3\textwidth}
+#+attr_latex: :width \textwidth
+[[./elefante.jpg]]
+#+latex: \end{column} \begin{column}{0.7\textwidth}
+- No podemos cerrarnos a su existencia (¡y conveniencia!)
+- Pero tampoco podemos permitir que /anulen/ al esfuerzo en las consignas
+- Aprovechemos y exploremos — pero con *honestidad académica*, usándolos
+  para *mejorar* (no reemplazar) nuestro esfuerzo
+#+latex: \end{column} \end{columns}
+
+#+latex: \begin{columns} \begin{column}{0.7\textwidth}
+- Todos somos nuevos usándolos, y tenemos que aprender
+- Algunos somos más bien /escépticos/. ¡Pero no hay que cerrarnos! \Smiley
+#+latex: \end{column} \begin{column}{0.3\textwidth}
+#+attr_latex: :width \textwidth
+[[./elefante2.jpg]]
+#+latex: \end{column} \end{columns}
+#+latex: \raggedleft \scriptsize Imágenes:  On 2012, Blogging and Elephants in the Room», \url{https://www.chroniclesofcardigan.com/}
+
+** ¿Algo más?
+
+¡Espero que estén tan emocionados como yo de iniciar este cursado!
+
+- Nombre :: Gunnar Eyal Wolf Iszaevich
+- Email :: gwolf@gwolf.org
+- Ubicación :: Instituto de Investigaciones Económicas UNAM (Secretaría
+  Técnica)
+- Teléfono :: 55-5623-0154

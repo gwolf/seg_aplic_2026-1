@@ -1,0 +1,9 @@
+Como punto de partida, se me ocurrió retomar una presentación que elaboré
+hace ya más de 20 años; pueden encontrarla en línea en:
+
+    http://gwolf.org/seguridad/seg_en_redes
+
+Dejo aquí copia del PDF, para tener a mano todo el material de
+cursado. Estoy seguro (¡y es parte intencional del experimento! 😉) que
+cuando la preparé cometí varios errores, y que varios conceptos no han
+“envejecido bien”. ¡Veamos cómo va!

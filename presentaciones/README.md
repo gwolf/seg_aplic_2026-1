@@ -1,4 +1,4 @@
-* Material presentado como parte del curso
+# Material presentado como parte del curso
 
 1. Descripción general del curso (`2025.08.12`):
    [Presentación](./00_presentacion.pdf)
@@ -37,7 +37,7 @@
        bajo ataque_
    - Políticas y mecanismos ⇒ Qué y cómo. Especificación, diseño e implementación..
 
-* Temas adicionales abordados
+# Temas adicionales abordados
 
 ...Tal vez porque el interés y la plática *caminaron naturalmente* hacia
 allá, por pregunta expresa, por lo que sea — son temas que cubrimos en

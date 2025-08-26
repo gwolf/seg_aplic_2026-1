@@ -74,9 +74,10 @@ Posiblemente esta sección no esté tan completa y bien ordenada, pero no la
 olvidemos. ¿Falta algo por agregar? ¡Agréguenlo ustedes mismos! (o
 recuérdenme que lo haga)
 
-`2025.08.19`:
+## `2025.08.19`
 - ¿Que es la divulgación de información por canales laterales?
-`2025.08.21`:
+
+## `2025.08.21`
 - El *modelo transitivo de confianza* PKI-CA:
   - El ataque *Heartbleed* (2014) y la exfiltración de llaves privadas
   - El *Certificate Authority Browser Forum* (CABF)

@@ -1,0 +1,113 @@
+* Temas abordados en el transcurso del mes de *agosto*
+
+** Del temario «formal»
+
+
+1. Descripción general del curso (=2025.08.12=): [[./00_presentacion.pdf][Presentación]]
+2. Primer acercamiento (=2025.08.14=): Seguimos una /vieja/ presentación
+   mía (modificada por última vez en 2008): [Seguridad en redes: ¿qué es?
+   ¿cómo lograrla?](./01_seg_en_redes.pdf) → **¿Qué es la seguridad de la
+   información?** y **Características de un sistema seguro**
+3. =2025.08.19=: Componentes básicos de la seguridad informática: Vamos
+   siguiendo el discurso del capítulo 1 del libro [[https://www.oreilly.com/library/view/introduction-to-computer/0321247442/][Introduction to Computer
+   Security]], de Matt Bishop. → **Propiedades de la seguridad de la
+   información**
+
+   - /La triada de la seguridad/, o los tres principales /aspectos/ o
+     /servicios/ de la seguridad: *Confidencialidad, Integridad,
+     Disponibilidad*
+
+   - /Amenazas/, /Ataques/ (¿e /incidentes/?) Categorías de estos, y
+     relación con la /triada/:
+     - /Divulgación/ (disclosure), /engaño/ (deception), /disrupción/
+       (disruption), /usurpación/ (usurpation) ⇒ Shirey 1994: Security
+       Architecture for Internet Protocols: A Guide for Protocol Designs
+       and Standards (draft expirado de IRTF)
+
+   =2025.08.21=:
+   - /Amenazas/, /Ataques/ (¿e /incidentes/?), continuado
+     - /Fisgoneo/ (snooping / eavesdropping / wiretapping)
+     - /Modificación/ o /alteración/
+     - Suplantación de identidad / enmascaramiento ⇒ MitM (/Man in the
+       Middle/) ( ∈ /usurpación/;  ≠ /delegación/)
+     - Repidio de origen / Negación de recepción
+     - Demora / negación de servicio
+   - Objetivos de la seguridad
+     - Prevención
+     - Detección
+     - Recuperación ⇒ Vuelta al /estado confiado/; operación correcta /aún
+       bajo ataque/
+
+4. =2025.08.26= Seguiremos algunos textos para hablar de la **Seguridad
+   informática capa a capa**. Algunas ideas:
+   - [[https://axiomq.com/blog/7-layers-of-cybersecurity-explained-a-complete-guide/][7 Layers of Cybersecurity Explained: A Complete Guide]]
+   - [[https://cisotimes.com/defense-in-depth-the-layered-approach-to-cybersecurity/][Defense in Depth – The Layered Approach to Cybersecurity]]
+   - [[https://www.comparitech.com/antivirus/what-is-layered-security/][What is layered security? A complete guide]]
+
+   Algunos artículos para trabajar más *en serio*:
+   - Tillwick, Olivier (2004): [[http://martinolivier.com/open/lasa.pdf][A layered security architecture: Design
+     issues]] Buena introducción general, definiciones basadas en los
+     “servicios de seguridad”, “flujos de trabajo”, presenta propuesta
+     genérica de capas.
+   - Yildiz, Abawajy, Ercan y Bernoth (2009): [[https://ieeexplore.ieee.org/iel5/5379703/5381549/05381731.pdf][A Layered Security Approach
+     for Cloud Computing Infrastructure]] presenta capas bastante diferentes,
+     especializándose en el enfoque de “cloud computing”
+   - Shiu, Chang, Wu, Huang, Chen (2011): [[https://ieeexplore.ieee.org/iel5/7742/5751283/05751298.pdf][Physical Layer Security in
+     Wireless Networks: A Tutorial]] Separan diferentes tipos de ataque sobre
+     sus diferentes características, detallan los servicios de seguridad
+     que pueden aplicarse a cada uno.
+
+5. =2025.08.28= Discusión acerca de lo que presenta el texto de Tillwick y
+   Olivier mencionado la clase anterior.
+
+   - *Políticas y mecanismos* ⇒ Qué y cómo. Especificación, diseño e
+     implementación.
+
+   - *Evolución histórica de los retos de seguridad en cómputo*
+     - 1940s/1950s: El centro de datos y las /mainframes/; acceso
+       físico. Seguridad como controles /procedimentales/ y /humanos/;
+       protección contra /fallos/, no /ataques/
+
+     - 1960s/1970s: Inicios del /tiempo compartido/. Papel del sistema
+       operativo en tanto /guardián/. CTSS (1961): Contraseñas (para
+       /contabilidad/ sobre todo). Control de acceso a archivos para evitar
+       eliminaciones /accidentales/. 1965 (MULTICS): Acceso remoto. De
+       protección contra /errores/ a protección contra /usuarios/. Anillos
+       de protección. ACLs. Seguridad como /requisito de diseño/. Primer
+       virus teórico → /Creeper/
+
+     - 1980s: Cómputo personal, LANs, BBSes. 1988: Morris. Viruses → Brain,
+       Jerusalem, Stoned. Sistemas operativos personales /sin concepto de
+       protección/. Equipos CERT/CC.
+
+     - 1990s: Cómputo personal en Internet. Comercialización /
+       monetización. Virus/gusanos aprovechando /ingeniería
+       social/. Popularización de DoS como ataque. Inyecciones SQL.
+
+     - 2000s: Profesionalización y monetización del malware. Botnets. Cruce
+       de límites→XSS/CSRF. /OWASP Top 10/ (2004). /Defensa en
+       profundidad/.
+
+       Fragmentación del perímetro. Profundización de expresiones de
+       /ingeniería social/. Ransomware. Exfiltraciones masivas de datos /en
+       la nube/ (→ ¿cuál es tu perímetro?)
+
+** Temas adicionales abordados
+
+...Tal vez porque el interés y la plática *caminaron naturalmente* hacia
+allá, por pregunta expresa, por lo que sea — son temas que cubrimos en
+clase, ¡y vale la pena mantener en mente!
+
+Posiblemente esta sección no esté tan completa y bien ordenada, pero no la
+olvidemos. ¿Falta algo por agregar? ¡Agréguenlo ustedes mismos! (o
+recuérdenme que lo haga)
+
+- =2025.08.19=
+  - ¿Que es la divulgación de información por canales laterales?
+
+- =2025.08.21=
+  - El *modelo transitivo de confianza* PKI-CA:
+    - El ataque *Heartbleed* (2014) y la exfiltración de llaves privadas
+    - El *Certificate Authority Browser Forum* (CABF)
+    - Algunos aspectos del ecosistema de las CAs, referencias a algunas
+      *actividades hostiles* que se han registrado

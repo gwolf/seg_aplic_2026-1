@@ -1,0 +1,3 @@
+Mi interés en esta materia es la prevención de "huecos" de seguridad en aplicaciones ya que al trabajar para un banco nunca se puede estar seguro.
+
+También me interesan temas de seguridad en red y escalamiento de permisos.

@@ -1,0 +1,43 @@
+* Temas abordados en el transcurso del mes de *septiembre*
+
+** Del temario «formal»
+
+1. =2025.09.02=
+   - (continuando) *Evolución histórica de los retos de seguridad en
+     cómputo*
+     - 1990s :: Cómputo personal en Internet. Comercialización /
+       monetización. Virus/gusanos aprovechando /ingeniería
+       social/. Popularización de DoS como ataque. Inyecciones SQL.
+
+       *Ojo* No era tendencia aún (al igual que los primeros virus),
+       pero... Primer caso de /ransomware/: /AIDS Trojan/ (1989)
+     - 2000s :: Profesionalización y monetización del
+       malware. Botnets. Cruce de límites→XSS/CSRF. /OWASP Top 10/
+       (2004). /Defensa en profundidad/.
+     - Actualidad ::
+       Fragmentación del perímetro. Profundización de expresiones de
+       /ingeniería social/. Ransomware. Exfiltraciones masivas de datos /en
+       la nube/ (→ ¿cuál es tu perímetro?)
+
+  - Comenzamos con la unidad 2, /El panorama de la seguridad informática
+    hoy/.
+
+    - /Modelos de riesgo/.
+
+      Acercamiento general: Modelos de evaluación de riesgo. [[https://pmstudycircle.com/risk-assessment-models/][Algunos
+      apuntadores: 9 Popular Risk Assessment Models in Risk Management]].
+
+      Específico en seguridad informática: [[https://csrc.nist.rip/publications/nistpubs/800-12/800-12-html/chapter7-printable.html][NIST SP 800-12 Cap.7]], [[https://csrc.nist.gov/pubs/sp/800/30/r1/final][NIST SP
+      800-30 Rev. 1]]. Los procesos de evaluación y análisis de estos
+      documentos de NIST SP 800 son muy completos, pero también demasiado
+      “pesados” ⇒ metodología OCTAVE (/Operationally Critical Threat, Asset
+      and Vulnerability Evaluation/; Caralli, R. A., Stevens, J. F., Young,
+      L. R., & Wilson, W. R. (2007). Introducing OCTAVE Allegro: Improving
+      the Information Security Risk Assessment Process. Software
+      Engineering Institute, Carnegie Mellon University.), orientada en los
+      activos de información y la organización, orientado a que el proceso
+      se realice internamente (no con auditor extenro), dando prioridad al
+      contexto operativo por sobre la estandarización. [[https://www.sei.cmu.edu/library/introducing-octave-allegro-improving-the-information-security-risk-assessment-process/][Introducing OCTAVE
+      Allegro: Improving the Information Security Risk Assessment Process]].
+
+** Temas adicionales abordados

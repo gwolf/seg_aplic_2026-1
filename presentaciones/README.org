@@ -1,0 +1,26 @@
+* Material presentado como parte del curso
+
+1. Temas presentados durante el mes de agosto. [[./agosto.org][Ver detalle]]
+
+   *Unidad 1*: Introducción a la seguridad de la información
+
+   1. ¿Qué es seguridad de la información?
+   2. Características de un sistema seguro
+   3. Propiedades de la seguridad de la información
+   4. Seguridad informática capa a capa
+   5. Evolución de los retos de seguridad informática sobre el desarrollo
+      histórico de la computación
+
+2. Temas presentados durante el mes de septiembre [[./septiembre.org][Ver detalle]]
+
+   (Finalizando la *Unidad 1*)
+
+   *Unidad 2*: El panorama de la seguridad informática hoy
+
+   1. Modelos de riesgo / Modelos de ataque
+   2. Manejo y respuesta a vulnerabilidades
+   3. Gestión de permisos y privilegios
+      1. Principio del menor privilegio
+   4. Bases de datos de vulnerabilidades y debilidades
+      1. CVE — Common Vulnerabilities and Exposure
+      2. CWE — Common Weakness Enumeration

@@ -64,11 +64,11 @@
      implementación.
 
    - *Evolución histórica de los retos de seguridad en cómputo*
-     - 1940s/1950s: El centro de datos y las /mainframes/; acceso
+     - 1940s/1950s :: El centro de datos y las /mainframes/; acceso
        físico. Seguridad como controles /procedimentales/ y /humanos/;
        protección contra /fallos/, no /ataques/
 
-     - 1960s/1970s: Inicios del /tiempo compartido/. Papel del sistema
+     - 1960s/1970s :: Inicios del /tiempo compartido/. Papel del sistema
        operativo en tanto /guardián/. CTSS (1961): Contraseñas (para
        /contabilidad/ sobre todo). Control de acceso a archivos para evitar
        eliminaciones /accidentales/. 1965 (MULTICS): Acceso remoto. De
@@ -76,21 +76,9 @@
        de protección. ACLs. Seguridad como /requisito de diseño/. Primer
        virus teórico → /Creeper/
 
-     - 1980s: Cómputo personal, LANs, BBSes. 1988: Morris. Viruses → Brain,
-       Jerusalem, Stoned. Sistemas operativos personales /sin concepto de
-       protección/. Equipos CERT/CC.
-
-     - 1990s: Cómputo personal en Internet. Comercialización /
-       monetización. Virus/gusanos aprovechando /ingeniería
-       social/. Popularización de DoS como ataque. Inyecciones SQL.
-
-     - 2000s: Profesionalización y monetización del malware. Botnets. Cruce
-       de límites→XSS/CSRF. /OWASP Top 10/ (2004). /Defensa en
-       profundidad/.
-
-       Fragmentación del perímetro. Profundización de expresiones de
-       /ingeniería social/. Ransomware. Exfiltraciones masivas de datos /en
-       la nube/ (→ ¿cuál es tu perímetro?)
+     - 1980s :: Cómputo personal, LANs, BBSes. 1988: Morris. Viruses →
+       Brain, Jerusalem, Stoned. Sistemas operativos personales /sin
+       concepto de protección/. Equipos CERT/CC.
 
 ** Temas adicionales abordados
 

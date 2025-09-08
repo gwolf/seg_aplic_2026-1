@@ -1,0 +1,90 @@
+ANÁLISIS DE SEGURIDAD DE COMPUTADORA PERSONAL USANDO METODOLOGÍA OCTAVE
+
+FASE 1: CONSTRUCCIÓN DE PERFILES DE AMENAZAS BASADOS EN ACTIVOS
+
+1. Identificación de Activos Críticos:
+   - Laptop personal
+   - Documentos personales (fotos, documentos de trabajo, tareas)
+   - Credenciales de acceso (correos, redes sociales, banco)
+   - Información financiera personal
+
+2. Requerimientos de Seguridad:
+   - Confidencialidad: Proteger información personal y financiera
+   - Integridad: Mantener archivos sin modificaciones no autorizadas
+   - Disponibilidad: Acceso a archivos cuando se necesiten
+
+3. Amenazas Identificadas:
+   - Malware (virus, ransomware)
+   - Robo físico de la laptop
+   - Phishing y estafas en línea
+   - Pérdida de datos por falla del disco duro
+   - Acceso no autorizado por red WiFi insegura
+
+FASE 2: IDENTIFICACIÓN DE VULNERABILIDADES DE INFRAESTRUCTURA
+
+1. Vulnerabilidades Tecnológicas:
+   - Sistema operativo sin actualizaciones recientes
+   - Antivirus gratuito básico
+   - Contraseñas débiles o repetidas
+   - Falta de cifrado en el disco duro
+   - Conexión a redes WiFi públicas sin VPN
+
+2. Puntos de Acceso:
+   - Puerto USB
+   - Conexión WiFi
+   - Navegador web
+   - Aplicaciones instaladas
+   - Correo electrónico
+
+3. Análisis de Prácticas de Seguridad Actuales:
+   - No hay respaldo regular de archivos
+   - Uso de la misma contraseña en varios servicios
+   - Descarga de software de fuentes no confiables
+   - No se bloquea la computadora al alejarse
+   - Falta de autenticación de dos factores
+
+FASE 3: DESARROLLO DE ESTRATEGIA Y PLANES DE SEGURIDAD
+
+1. Estrategias de Mitigación:
+   Protección Básica:
+   - Instalar antivirus pagado con protección en tiempo real
+   - Activar el firewall del sistema
+   - Cifrar el disco duro
+   - Usar un gestor de contraseñas
+
+   Hábitos Seguros:
+   - Crear respaldos semanales en disco externo
+   - Usar autenticación de dos factores
+   - No abrir archivos adjuntos sospechosos
+   - Usar VPN en redes públicas
+
+2. Plan de Acción:
+   Día 1:
+   - Actualizar sistema operativo y programas
+   - Instalar antivirus
+   - Configurar firewall
+
+   Semana 1:
+   - Cambiar todas las contraseñas
+   - Configurar gestor de contraseñas
+   - Hacer primer respaldo completo
+
+   Mes 1:
+   - Configurar cifrado de disco
+   - Instalar y configurar VPN
+   - Establecer rutina de respaldos
+
+3. Métricas de Evaluación:
+   - Frecuencia de respaldos realizados
+   - Número de amenazas detectadas por antivirus
+   - Intentos de acceso no autorizado bloqueados
+   - Actualizaciones de seguridad instaladas
+
+4. Presupuesto Estimado:
+   - Antivirus profesional: $40/año
+   - Servicio VPN: $60/año
+   - Disco duro externo para respaldos: $80
+   - Gestor de contraseñas: $30/año
+
+CONCLUSIONES:
+Este análisis OCTAVE aplicado a una computadora personal demuestra que incluso los dispositivos de uso personal requieren una estrategia de seguridad estructurada. Las medidas propuestas son accesibles para cualquier usuario y pueden prevenir la mayoría de las amenazas comunes. La inversión en seguridad ($210 primer año) es mínima comparada con el valor de los datos protegidos.

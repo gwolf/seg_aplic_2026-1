@@ -19,25 +19,58 @@
        /ingeniería social/. Ransomware. Exfiltraciones masivas de datos /en
        la nube/ (→ ¿cuál es tu perímetro?)
 
-  - Comenzamos con la unidad 2, /El panorama de la seguridad informática
-    hoy/.
+2. =2025.09.04= Comenzamos con la unidad 2, /El panorama de la seguridad
+   informática hoy/.
 
-    - /Modelos de riesgo/.
+   - /Modelos de riesgo/.
 
-      Acercamiento general: Modelos de evaluación de riesgo. [[https://pmstudycircle.com/risk-assessment-models/][Algunos
-      apuntadores: 9 Popular Risk Assessment Models in Risk Management]].
+     Acercamiento general: Modelos de evaluación de riesgo. [[https://pmstudycircle.com/risk-assessment-models/][Algunos
+     apuntadores: 9 Popular Risk Assessment Models in Risk Management]].
 
-      Específico en seguridad informática: [[https://csrc.nist.rip/publications/nistpubs/800-12/800-12-html/chapter7-printable.html][NIST SP 800-12 Cap.7]], [[https://csrc.nist.gov/pubs/sp/800/30/r1/final][NIST SP
-      800-30 Rev. 1]]. Los procesos de evaluación y análisis de estos
-      documentos de NIST SP 800 son muy completos, pero también demasiado
-      “pesados” ⇒ metodología OCTAVE (/Operationally Critical Threat, Asset
-      and Vulnerability Evaluation/; Caralli, R. A., Stevens, J. F., Young,
-      L. R., & Wilson, W. R. (2007). Introducing OCTAVE Allegro: Improving
-      the Information Security Risk Assessment Process. Software
-      Engineering Institute, Carnegie Mellon University.), orientada en los
-      activos de información y la organización, orientado a que el proceso
-      se realice internamente (no con auditor extenro), dando prioridad al
-      contexto operativo por sobre la estandarización. [[https://www.sei.cmu.edu/library/introducing-octave-allegro-improving-the-information-security-risk-assessment-process/][Introducing OCTAVE
-      Allegro: Improving the Information Security Risk Assessment Process]].
+     Específico en seguridad informática: [[https://csrc.nist.rip/publications/nistpubs/800-12/800-12-html/chapter7-printable.html][NIST SP 800-12 Cap.7]], [[https://csrc.nist.gov/pubs/sp/800/30/r1/final][NIST SP
+     800-30 Rev. 1]]. Los procesos de evaluación y análisis de estos
+     documentos de NIST SP 800 son muy completos, pero también demasiado
+     “pesados” ⇒ metodología OCTAVE (/Operationally Critical Threat, Asset
+     and Vulnerability Evaluation/; Caralli, R. A., Stevens, J. F., Young,
+     L. R., & Wilson, W. R. (2007). Introducing OCTAVE Allegro: Improving
+     the Information Security Risk Assessment Process. Software
+     Engineering Institute, Carnegie Mellon University.), orientada en los
+     activos de información y la organización, orientado a que el proceso
+     se realice internamente (no con auditor extenro), dando prioridad al
+     contexto operativo por sobre la estandarización. [[https://www.sei.cmu.edu/library/introducing-octave-allegro-improving-the-information-security-risk-assessment-process/][Introducing OCTAVE
+     Allegro: Improving the Information Security Risk Assessment Process]].
+
+3. =2025.09.09=
+   - Presentación de los análisis de riesgo elaborados por los alumnos
+   - *Modelos de ataque*
+
+     Catalogan y describen /Tácticas, Técnicas y Procedimientos (TTPs)/ que
+     utilizan los adversarios para comprometer sistemas. Los modelos de
+     riesgo se centran en /qué queremos y qué requerimos proteger/, nos
+     llevan a hacer un análisis del valor de los componentes de nuestra
+     información; los modelos de ataque proporcionan /conocimiento
+     estructurado/ sobre el comportamiento real desde una perspectiva
+     adversarial, pasando de /defensa reactiva/ (corregir vulnerabilidades
+     detectadas) a una /defensa proactiva/ (anticipar y detectar campañas de
+     ataque).
+
+     - [[https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html][Lockheed Martin Cyber Kill Chain]] desarrollado como parte del modelo
+       /Intelligence Driven Defense/ para identificar y prevenir actividad
+       de intrusiones (2022). Identifica los pasos que un adversario debe
+       seguir para montar un reto APT (/Advanced Persistent Threat/), para
+       ayudar a romper la cadena. (Ojo: Hay críticas importantes al modelo)
+
+     - [[https://attack.mitre.org/][MITRE ATT&CK]] (2013–, actualización bianual) detalla técnicas para
+       distintos entornos, describiendo el /cómo/ y /por qué/ de /cada
+       paso/ en el ciclo de vida de un ataque.
+
+     - [[https://d3fend.mitre.org/][MITRE D3FEND]] siguiente paso natural de ATT&CK: «gráfica de
+       conocimiento de contramedidas de ciberseguridad»
+
+     - [[https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats#stride][Microsoft STRIDE]] ayuda a modelar y clasificar amenazas y ataques
+       para tenerlos presentes de forma preventiva, conforme se desarrolla
+       un sistema (y no cuando éste ya está desplegado).
 
 ** Temas adicionales abordados
+- =2025.09.09= Ataque a cadenas de suministro: [[https://jdstaerk.substack.com/p/we-just-found-malicious-code-in-the][Anatomy of a
+  Billion-Download NPM Supply-Chain Attack]]

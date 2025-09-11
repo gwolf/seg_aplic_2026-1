@@ -1,0 +1,2 @@
+Mi proyecto consiste en la investigación de el Aprendizaje Federado, propuesto por Google en el 2017 para el entrenamiento de Modelos de ML de manera colaborativa entre entidades sin la necesidad de compartir sus datos como activos.
+Esto usando Blockchain como plataforma para llevar acabo estos entrenamientos. Mi interés vendría en conocer estrategias de seguridad para implementar en este campo.

@@ -1,0 +1,97 @@
+Ejemplo técnico: Aplicación de OCTAVE en una red local/home
+
+------------------------------------------------------------
+Fase 1: Identificación de activos y amenazas
+------------------------------------------------------------
+Activos clave:
+1. Información
+   - Archivos personales (documentos, fotos, respaldos).
+   - Credenciales de acceso a servicios (banco, correo, redes sociales).
+
+2. Infraestructura
+   - Router Wi-Fi.
+   - Laptops, smartphones, tablets.
+   - Servidor NAS o disco duro externo con respaldos.
+   - Cámaras IP y dispositivos IoT.
+
+3. Personal (usuarios)
+   - Miembros de la familia o usuarios en la red.
+
+Amenazas identificadas:
+- Acceso no autorizado a la red Wi-Fi (cracking de WPA2 o SSID público).
+- Malware en dispositivos (ransomware en laptop, spyware en celular).
+- Intercepción de tráfico (ataques MITM en Wi-Fi).
+- Pérdida o robo físico de dispositivos.
+- Acceso indebido a cámaras IP o dispositivos IoT inseguros.
+
+Ejemplo de perfil de amenaza:
+"Un atacante externo que explota una contraseña débil de Wi-Fi para acceder al router y comprometer los dispositivos en la red local".
+
+
+------------------------------------------------------------
+Fase 2: Análisis de vulnerabilidades
+------------------------------------------------------------
+Componentes técnicos clave:
+- Router doméstico con firmware desactualizado.
+- Contraseñas débiles o por defecto en cámaras IP.
+- Laptops sin firewall activo o sin cifrado de disco.
+- Uso de una sola red Wi-Fi para todos (sin segmentación).
+
+Evaluación de vulnerabilidades:
+- Router: Firmware sin actualizar → vulnerable a exploits conocidos.
+- Wi-Fi: Configuración en WPA2 pero con clave débil → riesgo de fuerza bruta.
+- Usuarios: No siguen buenas prácticas → clics en correos de phishing.
+- Dispositivos IoT: Puertos expuestos y sin actualizaciones → punto de entrada común.
+
+Correlación con riesgos operativos:
+- Si el router es comprometido → toda la red local queda expuesta.
+- Un ransomware en una laptop → pérdida de información crítica.
+- Acceso a IoT → espionaje (cámaras), pivoting hacia otros dispositivos.
+
+
+------------------------------------------------------------
+Fase 3: Evaluación y mitigación del riesgo
+------------------------------------------------------------
+Análisis de riesgos (impacto x probabilidad):
+- Alto: Compromiso del router → acceso completo a red interna.
+- Alto: Ransomware en laptop → pérdida de datos familiares/financieros.
+- Medio: Robo de celular sin cifrado → exposición de cuentas personales.
+- Bajo: Corte eléctrico → pérdida temporal de acceso a la red.
+
+Estrategias de protección / mitigación:
+1. Router
+   - Cambiar credenciales por defecto.
+   - Actualizar firmware.
+   - Deshabilitar administración remota.
+   - Crear VLAN o red de invitados para IoT.
+
+2. Wi-Fi
+   - Usar WPA3 (si está disponible) o WPA2 con contraseña robusta.
+   - Deshabilitar WPS.
+   - Cambiar SSID por uno no identificable con la operadora.
+
+3. Dispositivos finales
+   - Habilitar firewall y cifrado de disco en laptops.
+   - Usar antivirus actualizado.
+   - Respaldo periódico en NAS/disco externo.
+
+4. Usuarios
+   - Capacitación básica en phishing y uso de contraseñas.
+   - Uso de administrador de contraseñas + MFA en servicios críticos.
+
+5. Monitoreo
+   - Revisar logs de router.
+   - Escaneo mensual con nmap para detectar puertos abiertos.
+   - Alertas en correo si un nuevo dispositivo se conecta al Wi-Fi.
+
+Priorización de riesgos:
+- Primero: asegurar router y Wi-Fi (control de acceso, firmware).
+- Segundo: proteger dispositivos críticos (laptop, celular con datos financieros).
+- Tercero: segmentar IoT y aplicar cifrado en respaldos.
+
+------------------------------------------------------------
+Resumen técnico:
+------------------------------------------------------------
+Aplicando OCTAVE en una red doméstica, se identifican activos críticos (información, dispositivos, usuarios),
+se reconocen vulnerabilidades técnicas (firmware desactualizado, contraseñas débiles, falta de segmentación)
+y se establecen estrategias de mitigación priorizadas (asegurar router, endurecer Wi-Fi, cifrar equipos y entrenar usuarios).

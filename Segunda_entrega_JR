@@ -1,0 +1,36 @@
+Política BYOD en una empresa
+1. Identificación de activos críticos
+Información confidencial de la empresa
+Acceso a redes internas
+Aplicaciones corporativas (correo)
+Dispositivos personales de empleados
+2. Identificación de amenazas
+Pérdida o robo de dispositivos
+Malware en dispositivos no gestionados
+Acceso no autorizado a datos corporativos
+Uso de redes Wi-Fi inseguras
+3. Identificación de vulnerabilidades
+Falta de cifrado en dispositivos personales
+Ausencia de políticas de seguridad claras
+No se aplican actualizaciones de seguridad
+Uso de aplicaciones no autorizadas
+4. Evaluación del impacto
+Alto: filtración de datos confidenciales
+Medio: interrupción de operaciones por malware
+Bajo: pérdida de productividad por incompatibilidades
+5. Evaluación de probabilidad
+Robo de dispositivos: Media
+Malware: Alta
+Acceso no autorizado: Alta
+Uso de redes inseguras: Media
+6. Priorización de riesgos
+Riesgo	                Impacto	  Probabilidad	 Prioridad
+Malware en dispositivos	 Alto	      Alta	       Alta
+Acceso no autorizado	   Alto	      Alta	       Alta
+Robo de dispositivos	   Medio      Media	       Media
+Redes inseguras	         Medio	    Media	       Media
+7. Plan de mitigación
+Implementar políticas claras de BYOD
+Requerir cifrado y autenticación en dispositivos
+Uso obligatorio de VPN para acceso remoto
+Monitoreo y gestión de dispositivos móviles (MDM)

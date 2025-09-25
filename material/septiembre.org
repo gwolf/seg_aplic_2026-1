@@ -71,6 +71,33 @@
        para tenerlos presentes de forma preventiva, conforme se desarrolla
        un sistema (y no cuando éste ya está desplegado).
 
+4. =2025.09.23=
+   - Concepto y utilidad para rastreo del estado de amenazas de la BD de la
+     /[[https://cve.mitre.org][Common Vulnerabilities and Exposures]]/ de MITRE
+     - Seguimiento de registros CVE en distribuciones de sistemas
+       operativos, por parte de equipos CERT
+
+5. =2025.09.25=
+   - Presentación rápida de /[[https://cwe.mitre.org/][Common Weakness Enumeration]]/ CWE de MITRE
+     - [[https://cwe.mitre.org/top25/archive/2024/2024_cwe_top25.html][Top 25]]
+   - Gestión de permisos y privilegios
+     - Modelos fundamentales de control de acceso
+       - DAC (Discretionary Access Control)
+       - MAC (Mandatory Access Control)
+       - RBAC (Role-Based Access Control)
+       - ABAC (Attribute-Based Access Control)
+     - Conceptos relacionados
+       - Principio de mínimo privilegio (PoLP)
+       - Escalación de privilegios (vertical, horizontal)
+       - Acumulación de privilegios (/privilege creep/)
+       - Elevación de privilegios /JIT/
+       - Separación de responsabilidades (/Separation of Duties/, SoD)
+
 ** Temas adicionales abordados
 - =2025.09.09= Ataque a cadenas de suministro: [[https://jdstaerk.substack.com/p/we-just-found-malicious-code-in-the][Anatomy of a
   Billion-Download NPM Supply-Chain Attack]]
+- =2025.09.23= Revisión rápida y discusión de dos artículos de
+  /Communications of the ACM/ de agosto 2025:
+  - [[https://cacm.acm.org/opinion/two-types-of-data-privacy-controls/][Two Types of Data Privacy Controls]], Eman Alashwali
+  - [[https://cacm.acm.org/research/to-post-or-not-to-post-ai-ethics-in-the-age-of-big-tech/][To Post or Not to Post: AI Ethics in the Age of Big Tech]], Henrik Skaug
+    Sætra

@@ -80,6 +80,8 @@
 5. =2025.09.25=
    - Presentación rápida de /[[https://cwe.mitre.org/][Common Weakness Enumeration]]/ CWE de MITRE
      - [[https://cwe.mitre.org/top25/archive/2024/2024_cwe_top25.html][Top 25]]
+
+6. =2025.09.30=
    - Gestión de permisos y privilegios
      - Modelos fundamentales de control de acceso
        - DAC (Discretionary Access Control)
@@ -101,3 +103,8 @@
   - [[https://cacm.acm.org/opinion/two-types-of-data-privacy-controls/][Two Types of Data Privacy Controls]], Eman Alashwali
   - [[https://cacm.acm.org/research/to-post-or-not-to-post-ai-ethics-in-the-age-of-big-tech/][To Post or Not to Post: AI Ethics in the Age of Big Tech]], Henrik Skaug
     Sætra
+- =2025.09.25=
+  - Conceptos /muy/ generales de algoritmos de cifrado:
+    - RSA
+    - Curva elíptica
+    - Post-cuántico

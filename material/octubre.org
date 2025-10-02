@@ -1,0 +1,18 @@
+* Temas abordados en el transcurso del mes de *octubre*
+
+** Del temario formal
+
+Para desarrollar esta unidad, sugiero que vayamos siguiendo el siguiente
+texto que desarrollé hace varios años: [[https://ru.iiec.unam.mx/4047/1/tipos_de_ataque.pdf][Tipos de ataque]]. No está tan
+actualizado como quisiera, y tiene varias ligas rotas, pero creo que
+podremos utilizarlo para /jugar/ un tanto...
+
+** Temas adicionales abordados
+
+- Nunca dejan de aparecer pequeños /giros de tuerca/ sobre /agujeros/ ya
+  discutidos y analizados. Por ejemplo, el pasado 16 de septiembre, LWN
+  presentó el texto [[https://lwn.net/Articles/1038326/][Another npm supply-chain attack]], refiriéndose al
+  /ataque de cadena de suministro/ que emplea al paquete de NPM
+  /Tinycontrol/, exfiltrando /todo tipo de secretos/. Hay un bonito
+  [[https://krebsonsecurity.com/2025/09/self-replicating-worm-hits-180-software-packages/][artículo al respecto en /Krebs on Security/]], y su /modus operandi/
+  resuena fuertemente con el [[https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5][artículo de 2018 de David Gilbertson]].

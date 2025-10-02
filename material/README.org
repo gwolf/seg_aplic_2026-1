@@ -24,3 +24,15 @@
    4. Bases de datos de vulnerabilidades y debilidades
       1. CVE — Common Vulnerabilities and Exposure
       2. CWE — Common Weakness Enumeration
+
+3. Temas presentados durante el mes de octubre [[./octubre.org][Ver detalle]]
+
+   *Unidad 3*: Tipos de ataque
+
+   1. Denegación de servicio (DoS, DDoS, amplificación, reflexión)
+   2. Desbordamientos (de buffer, de stack, de enteros)
+   3. Inyecciones (de cadenas, SQL, objetos, código, solicitudes)
+   4. Cruce de límites de confianza (XSS, CSRF)
+   5. Basados en codificación
+   6. Algoritmos débiles de cifrado
+

@@ -7,6 +7,15 @@ texto que desarrollé hace varios años: [[https://ru.iiec.unam.mx/4047/1/tipos_
 actualizado como quisiera, y tiene varias ligas rotas, pero creo que
 podremos utilizarlo para /jugar/ un tanto...
 
+1. =2025.10.02=
+
+   Repasamos las definiciones de /Control de acceso discrecional/ (/DAC/) y
+   /Control de acceso mandatorio/ u /obligatorio/ (/MAC/), revisando la
+   implementación en Linux con =AppArmor= y =SELinux=.
+
+   Entramos al tema /Tipos de ataque/ abordando el tema /Denegación de
+   servicio (DoS)/, cubriendo hasta /amplificación y reflexión/.
+
 ** Temas adicionales abordados
 
 - Nunca dejan de aparecer pequeños /giros de tuerca/ sobre /agujeros/ ya
@@ -16,3 +25,12 @@ podremos utilizarlo para /jugar/ un tanto...
   /Tinycontrol/, exfiltrando /todo tipo de secretos/. Hay un bonito
   [[https://krebsonsecurity.com/2025/09/self-replicating-worm-hits-180-software-packages/][artículo al respecto en /Krebs on Security/]], y su /modus operandi/
   resuena fuertemente con el [[https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5][artículo de 2018 de David Gilbertson]].
+
+- Actividad a /intentar/ realizar juntos 😉 /Análisis de tráfico DDoS con
+  Wireshark/
+  - [[https://www.unb.ca/cic/datasets/ddos-2019.html][CIC-DDoS2019 DDoS evaluation dataset]], del Canadian Institute for
+    Cybersecurity
+  - [[https://medium.com/@ronak.d.sharma111/analyzing-a-ddos-attack-using-wireshark-8535274cd00e][Analyzing a DDOS Attack Using Wireshark]] (Ronak Sharma, Medium, 2024)
+  - [[https://blog.oudel.com/how-to-detect-a-ddos-attack-using-wireshark/][How to Detect a DDoS Attack Using Wireshark?]]
+  - Análisis gráfico en línea de interacción en archivos de captura =.pcap=
+    → [[https://lab.dynamite.ai][Dynamite Lab]]

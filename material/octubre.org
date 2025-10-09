@@ -16,9 +16,16 @@ podremos utilizarlo para /jugar/ un tanto...
    Entramos al tema /Tipos de ataque/ abordando el tema /Denegación de
    servicio (DoS)/, cubriendo hasta /amplificación y reflexión/.
 
+2. =2025.10.07=
+
+   Seguimos con los temas faltantes de negación de servicio: Distribuidos
+   (/DDoS/), DoS compuestos.
+
 ** Temas adicionales abordados
 
-- Nunca dejan de aparecer pequeños /giros de tuerca/ sobre /agujeros/ ya
+- =2025.10.07=
+
+  Nunca dejan de aparecer pequeños /giros de tuerca/ sobre /agujeros/ ya
   discutidos y analizados. Por ejemplo, el pasado 16 de septiembre, LWN
   presentó el texto [[https://lwn.net/Articles/1038326/][Another npm supply-chain attack]], refiriéndose al
   /ataque de cadena de suministro/ que emplea al paquete de NPM
@@ -26,7 +33,9 @@ podremos utilizarlo para /jugar/ un tanto...
   [[https://krebsonsecurity.com/2025/09/self-replicating-worm-hits-180-software-packages/][artículo al respecto en /Krebs on Security/]], y su /modus operandi/
   resuena fuertemente con el [[https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5][artículo de 2018 de David Gilbertson]].
 
-- Actividad a /intentar/ realizar juntos 😉 /Análisis de tráfico DDoS con
+- =2025.10.07=
+
+  Actividad a /intentar/ realizar juntos 😉 /Análisis de tráfico DDoS con
   Wireshark/
   - [[https://www.unb.ca/cic/datasets/ddos-2019.html][CIC-DDoS2019 DDoS evaluation dataset]], del Canadian Institute for
     Cybersecurity

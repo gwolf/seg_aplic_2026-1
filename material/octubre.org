@@ -21,6 +21,65 @@ podremos utilizarlo para /jugar/ un tanto...
    Seguimos con los temas faltantes de negación de servicio: Distribuidos
    (/DDoS/), DoS compuestos.
 
+3. =2025.10.09=
+
+   Dado que los alumnos están ya familiarizados con el tema de
+   /desbordamiento de buffer/, dimos un paso para profundizar en cómo
+   funcionan, y particularmente, en los /desbordamientos de pila/ (/stack
+   overflows/): dedicamos la sesión a entender la estructura de los /marcos
+   de stack/, el mecanismo empleado para llamar (y salir de) cualquier
+   función. Para esto, utilizamos el depurador =gdb=, comparando un par de
+   programas ejemplo en C y su compilación a ensamblador, y viendo el
+   resultado en ejecución
+
+   Utilizamos el modo TUI de gdb (=gdb --tui=) sobre un par de programas
+   compilados con la opción =-g= de =gcc=. Documentación: [[https://www.sourceware.org/gdb/documentation/][GDB: The GNU
+   Project Debugger]].
+
+4. =2025.10.14=
+
+   La idea de esta sesión es explorar algunas vulnerabilidades conocidas
+   que emplean /distintos tipos/ de desbordamiento. Algunos CVEs para
+   /jugar/:
+
+   - CVE-2021-3156 :: Error /off-by-one/ que lleva a un desbordamiento de
+     buffer que lleva a una escalación de privilegios a root
+
+   - CVE-2025-3277 :: Desbordamiento de enteros que permite una negación de
+     servicio o la ejecución de código arbitrario generando un
+     desbordamiento de buffer en /heap/ sobre la función =concat_ws()= de
+     SQLite
+
+   - CVE-2025-21333 :: Desbordamiento de enteros que lleva a la elevación
+     de privilegios en la integración del núcleo de Hyper-V con el kernel
+     de Windows — [[https://whiteknightlabs.com/2025/05/27/understanding-integer-overflow-in-windows-kernel-exploitation/][Explicación y detalles]].
+
+   - CVE-2025-4919 :: Índice fuera de límites mediante una vulnerabilidad
+     de confusión de índices en Javascript en Mozilla Firefox y Thunderbird
+
+   - CVE-2025-38204 :: Lectura fuera de índices en la función
+     =add_missing_indices()= del subsistema JFS del kernel de Linux
+
+   - Y2K y Y2038 :: Los desbordamientos no únicamente se producen en lo que
+     /conocemos como números enteros/...
+
+   *Y para nuestra siguiente clase...* ¡Ahora les toca a ustedes! 😃
+
+   - Busquen alguna vulnerabilidad ≈reciente (<5 años) que lleve a una
+     situación de /elevación de privilegios/ utilizando /algún tipo de
+     desbordamiento/
+
+   - Descríbanla en un par de párrafos. Describan la naturaleza del
+     software vulnerable, y dónde podría estar corriendo que pueda resultar
+     /motivo de preocupación/
+
+   - ¿Hay exploits conocidos? Expliquen brevemente cómo funciona el
+     exploit. ¿No los hay? expliquen /a grandes rasgos/ qué tipo de datos
+     se tendrían que inyectar para /acercarse/ a explotarlo.
+
+   - ¿Hay parches o medidas de mitigación disponibles públicamente?
+     Expliquen su funcionamiento.
+
 ** Temas adicionales abordados
 
 - =2025.10.07=
@@ -43,3 +102,4 @@ podremos utilizarlo para /jugar/ un tanto...
   - [[https://blog.oudel.com/how-to-detect-a-ddos-attack-using-wireshark/][How to Detect a DDoS Attack Using Wireshark?]]
   - Análisis gráfico en línea de interacción en archivos de captura =.pcap=
     → [[https://lab.dynamite.ai][Dynamite Lab]]
+

@@ -1,0 +1,10 @@
+Ejemplo de vulnerabilidad: CVE-2023-4911 (Looney Tunables, glibc ld.so)
+
+Naturaleza del software vulnerable / dónde corre
+La vulnerabilidad está en la biblioteca estándar de C (glibc), concretamente en el cargador dinámico ld.so al procesar la variable de entorno GLIBC_TUNABLES. Esta librería es crítica en sistemas Linux porque muchos programas dependen de glibc para operaciones básicas. Cuando se ejecuta un binario con permisos especiales (por ejemplo setuid o setgid), el cargador dinámico corre con esos permisos elevados. Si un usuario sin privilegios puede influir en cómo ld.so procesa GLIBC_TUNABLES, podría desencadenarse la vulnerabilidad y provocar una elevación de privilegios.
+
+¿Exploit conocido? Cómo funciona (a grandes rasgos)
+Sí, hay descripciones públicas del exploit. El atacante define la variable de entorno GLIBC_TUNABLES con datos cuidadosamente construidos que exceden los límites esperados y provocan un desbordamiento de búfer en ld.so. Al sobrescribir memoria adyacente (por ejemplo punteros o metadatos internos), el atacante puede redirigir el flujo de ejecución hacia código malicioso inyectado como payload. Dado que el cargador dinámico actúa con los permisos del binario víctima (p. ej. root si el binario es setuid root), el exploit permite ejecutar código con privilegios elevados, obteniendo así acceso de root desde una cuenta sin privilegios si se encuentra un binario setuid vulnerable.
+
+Medidas de mitigación o parches disponibles
+Los mantenedores de las distribuciones liberaron actualizaciones de seguridad que corrigen la vulnerabilidad en glibc/ld.so; aplicar esas actualizaciones es la medida indicada. Medidas temporales mientras no se parchea incluyen: eliminar o minimizar binarios setuid innecesarios, restringir el uso de variables de entorno peligrosas para procesos privilegiados, habilitar y configurar controles de acceso como AppArmor o SELinux para limitar lo que procesos pueden ejecutar o cargar, y auditar rutinariamente binarios con permisos elevados. Además, aplicar el principio de privilegio mínimo: no ejecutar servicios con permisos más altos de los estrictamente necesarios.

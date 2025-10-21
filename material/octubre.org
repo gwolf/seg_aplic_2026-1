@@ -80,6 +80,18 @@ podremos utilizarlo para /jugar/ un tanto...
    - ¿Hay parches o medidas de mitigación disponibles públicamente?
      Expliquen su funcionamiento.
 
+5. =2025.10.16=
+
+   Como apuntamos, abordamos dos ejemplos de CVE de desbordamiento traídos
+   por los alumnos: [[../entregas/02.CVE_escalation/AlfonsoRios/CVE-2024-53141.md][CVE-2024-53141]], sobre el subsistema /netfilter/ del
+   núcleo de Linux y [[../entregas/02.CVE_escalation/JRML-EJEMPLO][CVE-2023-4911]] («Looney Tunables»), de la biblioteca de
+   C de Linux, /glibc/.
+
+   Comenzamos a hablar de las inyecciones; las inyecciones de SQL son ya
+   ampliamente conocidas por el grupo.
+
+6. =2025.10.21=
+
 ** Temas adicionales abordados
 
 - =2025.10.07=

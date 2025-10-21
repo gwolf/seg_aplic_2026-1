@@ -1,0 +1,15 @@
+Vulnerabilidad: CVE-2025-24063 – Windows Kernel Streaming Driver
+Esta vulnerabilidad, divulgada en mayo de 2025, afecta al Windows Kernel Streaming Service Driver, un componente crítico del sistema operativo Windows 
+que gestiona flujos de audio y video entre aplicaciones en modo usuario y controladores en modo kernel. El problema consiste en un 
+desbordamiento de búfer basado en heap, que ocurre por una mala gestión de la memoria durante operaciones de streaming. Si se explota, permite a un atacante local autenticado ejecutar código arbitrario con privilegios de SYSTEM, lo que implica una elevación completa de privilegios en el equipo afectado.
+Este tipo de vulnerabilidad es especialmente preocupante porque el driver opera en modo kernel, lo que significa que cualquier explotación exitosa
+ compromete la integridad del sistema operativo. Puede encontrarse en entornos corporativos, estaciones de trabajo y servidores Windows, donde la ejecución multimedia es común. Existen exploits conceptuales que aprovechan la corrupción de memoria para inyectar código malicioso en el heap, redirigiendo
+ el flujo de ejecución hacia instrucciones controladas por el atacante. El exploit normalmente requiere datos cuidadosamente diseñados para sobrescribir punteros internos del heap y lograr ejecución arbitraria.
+
+Exploits y mitigación
+
+Exploits conocidos: Sí, se han publicado pruebas de concepto en foros especializados y repositorios privados, aunque no se han visto ataques masivos todavía.
+Mitigación: Microsoft lanzó un parche oficial en su ciclo de actualizaciones de seguridad.
+El parche corrige la validación de tamaños y la asignación segura de memoria en el driver, evitando el desbordamiento. 
+Como medida adicional, se recomienda aplicar el parche inmediatamente y habilitar herramientas de protección como Exploit Guard y 
+ASLR para reducir el riesgo de explotación.

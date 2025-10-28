@@ -92,6 +92,18 @@ podremos utilizarlo para /jugar/ un tanto...
 
 6. =2025.10.21=
 
+7. =2025.10.23= Abordamos el tema de la codificación de texto, siguiendo
+   aproximadamente el texto de Joel Spolsky de 2003, [[https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/][The Absolute Minimum
+   Every Software Developer Absolutely, Positively Must Know About Unicode
+   and Character Sets (No Excuses!)]]
+
+8. =2025.10.28= Continuamos con el tema de codificación de datos, revisando
+   la actualización del artículo anterior tras 20 años, [[https://tonsky.me/blog/unicode/][The Absolute
+   Minimum Every Software Developer Must Know About Unicode in 2023 (Still
+   No Excuses!)]], de Niki Tonsky (2023), y supongo que abordaremos tambien [[https://www.reedbeta.com/blog/programmers-intro-to-unicode/][A
+   Programmer’s Introduction to Unicode]], de Nathan Reed (2017).
+
+
 ** Temas adicionales abordados
 
 - =2025.10.07=

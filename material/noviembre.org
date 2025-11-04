@@ -1,0 +1,13 @@
+* Temas abordados en el transcurso del mes de *noviembre*
+
+** Del temario formal
+
+1. =2025.11.04=
+
+   Para el tema de /algoritmos débiles de cifrado/:
+
+   - POODLE (Padding Oracle On Downloaded Legacy Encryption) ⇒
+     [[https://www.cve.org/CVERecord?id=CVE-2014-3566][CVE-2014-3566]]
+   - [[https://www.netcraft.com/blog/95-of-https-servers-vulnerable-to-trivial-mitm-attacks][95% of HTTPS servers vulnerable to trivial MITM attacks]] (Netcraft, 2023)
+   - [[https://arxiv.org/abs/1809.05681][What's in a Downgrade? A Taxonomy of Downgrade Attacks in the TLS
+     Protocol and Application Protocols Using TLS]]

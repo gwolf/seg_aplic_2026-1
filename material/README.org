@@ -36,3 +36,24 @@
    5. Basados en codificación
    6. Algoritmos débiles de cifrado
 
+4. Temas presentados durante el mes de noviembre [[./noviembre.org][Ver detalle]]
+
+   *Unidad 4*: Prácticas de programación segura
+
+   1. Principios de diseño seguro
+   2. Prácticas seguras de programación
+      1. Estándares y convenciones
+      2. Manejo seguro de datos
+      3. Manejo de errores
+      4. Manejo de información sensible (contraseñas / datos personales)
+      5. Gestión de dependencias
+   3. Evolución de los lenguajes de programación en lo relativo a la
+      seguridad
+      1. Gestión de la memoria
+      2. Inmutabilidad
+      3. Sistemas de tipos fuertes
+   4. Consideraciones de versionado y mantenibilidad
+      1. Sistemas de gestión de código
+      2. CI/CD
+      3. Análisis estático / dinámico
+   5. El desarrollo y el ciclo de vida de los sistemas (/DevSecOps/)

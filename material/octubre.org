@@ -90,7 +90,7 @@ podremos utilizarlo para /jugar/ un tanto...
    Comenzamos a hablar de las inyecciones; las inyecciones de SQL son ya
    ampliamente conocidas por el grupo.
 
-6. =2025.10.21=
+6. =2025.10.21= (¿qué fue lo que vimos? ¡Una disculpa! Lo olvidé :-Þ )
 
 7. =2025.10.23= Abordamos el tema de la codificación de texto, siguiendo
    aproximadamente el texto de Joel Spolsky de 2003, [[https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/][The Absolute Minimum
@@ -103,15 +103,14 @@ podremos utilizarlo para /jugar/ un tanto...
    No Excuses!)]], de Niki Tonsky (2023), y supongo que abordaremos tambien [[https://www.reedbeta.com/blog/programmers-intro-to-unicode/][A
    Programmer’s Introduction to Unicode]], de Nathan Reed (2017).
 
-9. =2025.10.30= Para el tema de /algoritmos débiles de cifrado/:
-   - POODLE (Padding Oracle On Downloaded Legacy Encryption) ⇒
-     [[https://www.cve.org/CVERecord?id=CVE-2014-3566][CVE-2014-3566]]
-   - [[https://www.netcraft.com/blog/95-of-https-servers-vulnerable-to-trivial-mitm-attacks][95% of HTTPS servers vulnerable to trivial MITM attacks]] (Netcraft, 2023)
-   - [[https://arxiv.org/abs/1809.05681][What's in a Downgrade? A Taxonomy of Downgrade Attacks in the TLS
-     Protocol and Application Protocols Using TLS]]
-   Fuerza criptográfica comparada de protocolos:
-   - [[https://www.keylength.com/][Bluecrypt ⇒ Cryptographic Key Length Recommendation]]
-   - [[https://www.enisa.europa.eu/publications/algorithms-key-size-and-parameters-report-2014][Algorithms, key size and parameters report 2014]]
+9. =2025.10.30=
+
+   - Los /modos/ de uso de los algoritmos de cifrado orientados a bloques
+
+   - Fuerza criptográfica comparada de protocolos:
+     - [[https://www.keylength.com/][Bluecrypt ⇒ Cryptographic Key Length Recommendation]]
+     - [[https://www.enisa.europa.eu/publications/algorithms-key-size-and-parameters-report-2014][Algorithms, key size and parameters report 2014]]
+
 ** Temas adicionales abordados
 
 - =2025.10.07=

@@ -11,3 +11,38 @@
    - [[https://www.netcraft.com/blog/95-of-https-servers-vulnerable-to-trivial-mitm-attacks][95% of HTTPS servers vulnerable to trivial MITM attacks]] (Netcraft, 2023)
    - [[https://arxiv.org/abs/1809.05681][What's in a Downgrade? A Taxonomy of Downgrade Attacks in the TLS
      Protocol and Application Protocols Using TLS]]
+
+   Y con esto terminamos la unidad 3, «Tipos de ataque».
+
+2. =2025.11.06=
+
+   Iniciamos con la unidad 4, «Prácticas de programación segura». Si no nos
+   cuidamos, podemos caer bastante en repetir lo que vimos en las unidades
+   1 y 2, así que... ¡busquémosle ángulos interesantes! ☺
+
+   - Patrones de diseño seguro: *¿Cómo hacer las cosas bien?*
+     - Validación centralizada :: Servicio de validación única para evitar
+       aplicaciones con validación dispersa
+
+       → Middleware de validación, firewalls de aplicación (WAF) → [[https://microservices.io/patterns/apigateway.html][API
+       Gateway]]
+
+     - Tokens de validación por tiempo limitado :: [[https://learn.microsoft.com/en-us/azure/architecture/patterns/valet-key][Patrón /Valet key/]]
+
+     - /Principio/ de Conocimiento Mínimo para Datos ("Store/Don't Store")
+
+       - Concepto: Una decisión de diseño consciente y documentada sobre
+         qué datos se almacenan, con qué nivel de detalle y por cuánto
+         tiempo ⇒ /Mínimo Privilegio/ aplicado a los datos.
+
+         Ventaja: Minimiza el impacto de una brecha de datos.
+
+   - Antipatrones: *¿Qué cosas hacemos mal si no nos cuidamos?*
+     - [[https://cwe.mitre.org/data/definitions/656.html][Seguridad por obscuridad]]
+
+     - [[https://cwe.mitre.org/data/definitions/798.html][Credenciales especificadas /en duro/]] → ¿y qué esquemas tenemos para
+       evitarlo?
+
+     - [[https://cwe.mitre.org/data/definitions/602.html][Verificación del lado de cliente de seguridad del lado del servidor]]
+
+   - El [[https://www.threatmodelingmanifesto.org/][manifiesto del modelado de riesgos]]

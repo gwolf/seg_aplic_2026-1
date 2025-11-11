@@ -14,7 +14,7 @@
 
    Y con esto terminamos la unidad 3, «Tipos de ataque».
 
-2. =2025.11.06=
+2. =2025.11.06= y =2025.11.08=
 
    Iniciamos con la unidad 4, «Prácticas de programación segura». Si no nos
    cuidamos, podemos caer bastante en repetir lo que vimos en las unidades
@@ -46,3 +46,61 @@
      - [[https://cwe.mitre.org/data/definitions/602.html][Verificación del lado de cliente de seguridad del lado del servidor]]
 
    - El [[https://www.threatmodelingmanifesto.org/][manifiesto del modelado de riesgos]]
+
+3. =2025.11.11=
+   - Gestión de dependencias ::
+     1. [[https://www.q2bstudio.com/nuestro-blog/298/gestion-dependencias-software-practicas][Q2B ⇒ Mejores Prácticas para la Gestión de Dependencias en Proyectos
+        de Software]] dice,
+
+	- « *Uso de Herramientas de Gestión de Dependencias*: Herramientas
+          como Maven, Gradle, o NPM simplifican la gestión de dependencias
+          al automatizar la descarga, actualización, y compatibilidad de
+          las mismas. Utilizar estas herramientas no solo ahorra tiempo
+          sino que también minimiza el riesgo de errores humanos». →
+          Discutir al respecto 🙂
+
+	- « *Minimizar el Uso de Dependencias*: Aunque pueda parecer
+          contraintuitivo, menos es más cuando hablamos de
+          dependencias. Evalúa críticamente si una dependencia es realmente
+          necesaria antes de añadirla a tu proyecto. Esto no solo
+          simplifica la gestión de dependencias sino que también mejora el
+          tiempo de carga de tus aplicaciones y páginas web, beneficiando
+          el posicionamiento SEO y la experiencia de usuario.»
+
+	- « *Documentación y Seguimiento de Dependencias*: Mantener una
+          documentación detallada de todas las dependencias, incluidas las
+          versiones y su propósito, es crucial. Esto facilita la
+          actualización, el diagnóstico de problemas y la colaboración
+          entre equipos.»
+
+	- « *Pruebas Rigurosas*: Implementa pruebas automatizadas para
+          verificar que las actualizaciones de dependencias no rompan la
+          funcionalidad existente. Las pruebas unitarias, de integración y
+          de sistema son esenciales para garantizar que tu aplicación
+          funcione como se espera tras cada actualización». → ¿Es el lugar
+          correcto?
+
+     2. [[https://docs.cloud.google.com/software-supply-chain-security/docs/dependencies?hl=es-419][Google Cloud ⇒ Software Supply Chain Security ⇒ Dependency
+        Management]]
+
+	- Dependencias /directas/ vs. /indirectas/
+
+	- Herramientas de seguimiento de dependencias
+
+	- Estrategias para el manejo de dependencias
+
+   - Manejo de errores ::
+
+     1. [[https://developers.google.com/tech-writing/error-messages/error-handling][General error handling rules]], corto y al punto, explicación simple
+        del tema
+
+     2. [[https://www.geeksforgeeks.org/dsa/error-handling-in-programming/][Error Handling in Programming]], buen artículo con varias técnicas,
+        desde las más básicas, y con ejemplos multi-lenguajes
+
+     3. [[https://hjortberg.substack.com/p/best-practices-for-secure-and-readable-f97][Best Practices for Secure and Readable Code: Error Handling and
+        Logging]] detalla aspectos como el /para qué/ procesamos los
+        errores. Tiene puntos importantes.
+
+     4. [[https://dev.to/ajtech0001/mastering-error-handling-in-rust-a-complete-guide-32aj][Manejo de errores en Rust]] El lenguaje Rust introduce algunas clases
+        y comportamientos interesantes (aunque a veces frustrantes) para el
+        manejo de errores. Revisemos rápidamente.

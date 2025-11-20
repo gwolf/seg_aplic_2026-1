@@ -154,18 +154,18 @@
      patrones y predicciones controlados por el atacante /en el mundo
      real/)
 
-     Comenzamos mencionando como ejemplo el fallido experimento del chatbot
-     /Tay/, lanzado por Microsoft el 25 de marzo de 2016. [[https://www.sciencedirect.com/science/article/pii/S2515856220300493][Debíamos haberlo
-     visto venir]]...
-
      1. *Ataque de envenenamiento de datos*: El atacante tiene acceso
         (parcial o total) a los datos de entrenamiento. Introduce ejemplos
         etiquetados incorrectamente o con sesgos maliciosos → El modelo
         "aprende" este patrón erróneo y lo replica. (Ejemplo → Microsoft
-        Tey, 2016). Envenenamiento de datos de /re-entrenamiento/.
+        Tay, 2016). Envenenamiento de datos de /re-entrenamiento/.
 
 	Mitigación → /Validación y procedencia de datos/; /Detección de
         outliers/; /Aprendizaje robusto/.
+
+        Comenzamos mencionando como ejemplo el fallido experimento del
+        chatbot /Tay/, lanzado por Microsoft el 25 de marzo
+        de 2016. [[https://www.sciencedirect.com/science/article/pii/S2515856220300493][Debíamos haberlo visto venir]]...
 
      2. *Ataques evasivos o adversariales*: Un atacante manipula datos /con
         el modelo ya en producción/ buscando que el modelo lo califique
@@ -181,6 +181,13 @@
         la entrada), /Robustificación del modelo/ (modelos más
         grandes/robustos o con técnicas específicas para entorpecer o
         ignorar a las perturbaciones mas habituales).
+
+	Vimos varios de los ejemplos y un poco de la explicación provista
+        por los artículos [[https://openai.com/index/attacking-machine-learning-with-adversarial-examples/][Attacking machine learning with adversarial
+        examples]] (OpenAI, 2017), [[https://viso.ai/deep-learning/adversarial-machine-learning/][Attack Methods: What Is Adversarial
+        Machine Learning?]] (Gaudenz Boesch, Viso.ai, 2023), y el capítulo
+        6.2, [[https://fedefliguer.github.io/AAI/adversarial.html][Ejemplos adversos]] (yo diría /adversariales/...) del libro
+        [[https://fedefliguer.github.io/AAI/][Aprendizaje automático interpretable]] (Christoph Molnar, 2021).
 
      3. *Extracción del modelo*: Un atacante busca /clonar el modelo/,
         enviando cientos de miles o millones de solicitudes al API y
@@ -206,3 +213,7 @@
 
      - Monitoreo :: ¿Monitorizamos las predicciones para detectar "data
        drift" o ataques?
+
+   Por último, compartí la referencia del artículo [[https://dl.acm.org/doi/10.1145/3764113][Unique Security and
+   Privacy Threats of Large Language Models: A Comprehensive Survey]] (Wang
+   et al., 2025).

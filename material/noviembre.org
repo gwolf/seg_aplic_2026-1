@@ -154,6 +154,10 @@
      patrones y predicciones controlados por el atacante /en el mundo
      real/)
 
+     Comenzamos mencionando como ejemplo el fallido experimento del chatbot
+     /Tay/, lanzado por Microsoft el 25 de marzo de 2016. [[https://www.sciencedirect.com/science/article/pii/S2515856220300493][Debíamos haberlo
+     visto venir]]...
+
      1. *Ataque de envenenamiento de datos*: El atacante tiene acceso
         (parcial o total) a los datos de entrenamiento. Introduce ejemplos
         etiquetados incorrectamente o con sesgos maliciosos → El modelo

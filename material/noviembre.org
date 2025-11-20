@@ -89,6 +89,8 @@
 
 	- Estrategias para el manejo de dependencias
 
+4. =2025.11.13=
+
    - Manejo de errores ::
 
      1. [[https://developers.google.com/tech-writing/error-messages/error-handling][General error handling rules]], corto y al punto, explicación simple
@@ -104,3 +106,99 @@
      4. [[https://dev.to/ajtech0001/mastering-error-handling-in-rust-a-complete-guide-32aj][Manejo de errores en Rust]] El lenguaje Rust introduce algunas clases
         y comportamientos interesantes (aunque a veces frustrantes) para el
         manejo de errores. Revisemos rápidamente.
+
+5. =2025.11.18=
+
+   - Características de la evolución de los lenguajes de programación ::
+
+     La evolución de los lenguajes de programación y sus características de
+     seguridad no pueden comprenderse sin entender el momento en que
+     aparecieron y el estado de la técnica. Platicamos acerca de la
+     necesidad del /código auto-modificante/ en las primeras arquitecturas
+     y todavía hasta las que hoy en día se utilizan como microcontroladores
+     (familias 6502, Z80). Y revisamos que, hacia principios de los 2000,
+     se encontró que la protección /en hardware/ evitando regiones de
+     memoria de escritura y ejecutables al mismo tiempo (=W^X= o /W xor X/)
+     resultó tan importante.
+
+     Hablamos del manejo de memoria en las distintas etapas del desarrollo
+     de los lenguajes:
+
+     1. *Sin manejo de memoria, sólo un /tiradero/*: Código binario
+        directo, ensamblador
+
+     2. *Memoria gestionada manualmente*: C (=malloc()= / =free()=),
+        Fortran, Pascal(?), C++ (=new()= / =delete()=)
+
+     3. *Recolector de basura*: Java, lenguajes /scripting/ en general,
+        .NET
+
+     4. *Gestión automática de memoria*: Rust (rasgos principales:
+        /inmutabilidad/, /propiedad/, /verificador de préstamos/, /tiempos
+        de vida/)
+
+     Tocamos también detalles del manejo e inferencia de los /tipos de
+     datos/.
+
+6. =2025.11.20=
+
+   - Seguridad en ML / AI ::
+
+     No podemos ignorar la importancia que tendrán estas herramientas a
+     futuro. ¿Qué podemos decir particularmente respecto a su seguridad?
+
+     Un modelo de ML no es solo código: es código + datos + modelo
+     entrenado. La superficie de ataque se amplía. No sólo se puede atacar
+     al código, sino que se pueden atacar /comportamientos específcos/ a
+     partir de los /datos/ (→ Atacar a las inferencias para que /emerjan/
+     patrones y predicciones controlados por el atacante /en el mundo
+     real/)
+
+     1. *Ataque de envenenamiento de datos*: El atacante tiene acceso
+        (parcial o total) a los datos de entrenamiento. Introduce ejemplos
+        etiquetados incorrectamente o con sesgos maliciosos → El modelo
+        "aprende" este patrón erróneo y lo replica. (Ejemplo → Microsoft
+        Tey, 2016). Envenenamiento de datos de /re-entrenamiento/.
+
+	Mitigación → /Validación y procedencia de datos/; /Detección de
+        outliers/; /Aprendizaje robusto/.
+
+     2. *Ataques evasivos o adversariales*: Un atacante manipula datos /con
+        el modelo ya en producción/ buscando que el modelo lo califique
+        incorrectamente → Perturbaciones pequeñas, tal vez imperceptibles
+        al humano, en la entrada, maximizando el /error del modelo/. Una
+        vez encontrado el modelo de error, se puede replicar con alta
+        probabilidad de éxito.
+
+	Mitigación → /Entrenamiento adversarial/ (incluir datos con
+        perturbaciones adversariales como parte del entrenamiento);
+        /Detección de datos adversariales/ (segundo modelo corriendo en
+        paralelo, especializado en encontrar patrones adversariales sobre
+        la entrada), /Robustificación del modelo/ (modelos más
+        grandes/robustos o con técnicas específicas para entorpecer o
+        ignorar a las perturbaciones mas habituales).
+
+     3. *Extracción del modelo*: Un atacante busca /clonar el modelo/,
+        enviando cientos de miles o millones de solicitudes al API y
+        entrenando a un modelo local. Ejemplo habitual: Clasificador de
+        imágenes.
+
+	Mitigación → /Rate limiting/, monitoreo, ofuscación de salidas (no
+        otorgar todas las etiquetas, sólo las más destacadas), entregar
+        patrones /marca de agua/.
+
+   - Checklist de Seguridad para un Proyecto de ML ::
+
+     - Datos :: ¿Validamos la procedencia y calidad de los datos de entrenamiento?
+
+     - Modelo :: ¿Hemos evaluado la robustez del modelo frente a ataques
+       adversariales?
+
+     - Entrenamiento :: ¿El pipeline de entrenamiento es seguro?
+       (credenciales, acceso)
+
+     - Despliegue :: ¿La API del modelo está segura? (autenticación, rate
+       limiting)
+
+     - Monitoreo :: ¿Monitorizamos las predicciones para detectar "data
+       drift" o ataques?

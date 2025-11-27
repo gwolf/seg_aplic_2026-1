@@ -1,0 +1,8 @@
+| Nombre         | Examen | Ej1 Descr             | Ej1 Octave | Ej2 Descr                                  | Ej2 CVE | Participación | Total |
+|----------------+--------+-----------------------+------------+--------------------------------------------+---------+---------------+-------|
+| Alexis Cote    |   8.25 | Red doméstica         |         10 | Heap overflow en kernel Windows            |      10 |            10 |  8.95 |
+| Rodrigo Moreno |   8.75 | Uso de PC personal    |         10 | Looney Tunables                            |      10 |             7 |  8.95 |
+| Alfonso Ríos   |   8.75 | Log4j                 |         10 | Escalación en kernel Linux                 |      10 |            10 |  9.25 |
+| Jorge Rosales  |    6.5 | Política BYoD         |          8 | Heap overflow en kernel Windows            |       8 |             8 |   7.1 |
+| Oscar Ruiz     |     10 | Mousejiggler en banco |         10 | Race Condition en kernel Windows (extemp.) |       8 |             8 |   9.5 |
+#+TBLFM: @2$8..@6$8=$2*0.6 + $4*0.15 + $6*0.15 + $7*0.1

@@ -1,0 +1,97 @@
+#+latex_header: \usepackage[margin=1in]{geometry}
+#+title: Fundamentos y Técnicas de Seguridad para Aplicaciones
+#+subtitle: Evaluación de fin de cursado
+#+date:
+#+author:
+#+options: toc:nil num:nil
+#+latex_header: \usepackage{listings}
+#+latex_header: \usepackage{wrapfig}
+#+latex_header: \usepackage{xcolor}
+#+latex_header: \usepackage{enumitem}
+#+latex_header: \usepackage{pdflscape}
+#+latex_header: \usepackage{fancyvrb}
+#+LATEX_HEADER: \renewcommand{\ttdefault}{pcr} \lstset{basicstyle=\ttfamily\small\bfseries, showstringspaces=false, keywordstyle=\color{keyword}, stringstyle=\color{string}, identifierstyle=\color{identifier}, commentstyle=\mdseries\textit, inputencoding=utf8, extendedchars=true, breaklines=true, breakatwhitespace=true, breakautoindent=true, numbers=left, numberstyle=\ttfamily\footnotesize\textit, framexleftmargin=7mm}
+#+LATEX_HEADER: \definecolor{string}{rgb}{0,0.6,0} \definecolor{shadow}{rgb}{0.5,0.5,0.5} \definecolor{keyword}{rgb}{0.58,0,0.82} \definecolor{identifier}{rgb}{0,0,0.7}
+#+LATEX_HEADER: \lstset{ extendedchars=true, literate={á}{{\'a}}1 {é}{{\~e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1 {Á}{{\'A}}1 {É}{{\~E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ñ}{{\~N}}1 {¡}{{!`}}1 {¿}{{?`}}1 }
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \usepackage{nopageno}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+#+LATEX_HEADER: \usepackage[spanish]{babel}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \newcommand{\valor}[1]{ \hskip -6em \rotatebox[origin=tl]{315}{ \colorbox{gray}{ \textcolor{white}{ \resizebox{1.5cm}{0.2cm}{ #1 } } } } ~ \\ \vskip -2.25cm }
+#+LATEX_HEADER: \newcommand{\raya}{\underline{\qquad} }
+#+LANGUAGE: es
+
+1. \valor{2 puntos} /Gestión de Dependencias como Problema de Seguridad/
+
+   Analiza por qué la gestión de dependencias de software (ej. en NPM,
+   PyPI, apt) se ha convertido en un vector crítico de ataques a la cadena
+   de suministro. Propón dos prácticas, una técnica y una organizacional,
+   para concientizar o reducir este riesgo.
+
+2. \valor{1 punto} /Antipatrones de seguridad/
+
+   ¿Cuáles de los siguientes son /antipatrones de seguridad/ reconocidos?
+   Indica cuáles son, e indica qué correspondería hacer si encuentras
+   código con este /antipatrón/ en un sistema que estés trabajando.
+
+   1. “Security by Obscurity” (Seguridad por Oscuridad).
+   2. Almacenar contraseñas en texto plano en la base de datos.
+   3. Implementar el principio de mínimo privilegio para los servicios.
+   4. Realizar validación de entrada únicamente del lado del cliente.
+
+3. \valor{2 puntos} /Desbordamientos/
+
+   Si bien los desbordamientos más famosos (¡y por buenas razones!) son los
+   desbordamientos de pila (/stack overflows/), la cantidad de amenazas que
+   pueden caracterizarse de esta manera es mucho mayor. Compara la
+   explotación de un /desbordamiento de pila/ (/stack overflow/) con un
+   /desbordamiento de enteros/ (/integer overflow/).
+
+4. \valor{2 puntos} /Enumeración de debilidades, enumeración de
+   vulnerabilidades/
+
+   Dos de los índices mas importantes para la comprensión y el seguimiento
+   de la seguridad en aplicaciones son el *CWE* (/Common Weakness
+   Enumeration/) y el *CVE* (/Common Vulnerabilities Enumeration/). ¿Cuál
+   es la relación entre ambos? ¿Existe algún /camino/ que lleve a algún
+   /problema/ que descubramos en determinado código a /transitar/ de
+   clasificarse como CWE a clasificarse como CVE (o a la inversa)?
+
+5. \valor{2 puntos} /Ataques de inyección/
+
+   Elige un ataque de inyección específico (SQLi, des-serialización, SSRF,
+   etc.) y propón una estrategia de “defensa en profundidad”, ubicando
+   controles de seguridad distintos en diferentes capas (ej. aplicación,
+   red, SO) para mitigarlo.
+
+6. \valor{1 punto} /Tipos de inyección/
+
+   Relaciona cada concepto (/tipo de inyección/) con su descripción
+   correspondiente.
+
+   #+latex: \begin{minipage}{0.4\textwidth}
+   *Tipo de inyección*
+   1. Inyección de comandos
+   2. Inyección de objetos
+   3. Server-Side Request Forgery (SSRF)
+   4. Inyección SQL
+      #+latex: \vskip 3em \,
+   #+latex: \end{minipage} \begin{minipage}{0.6\textwidth}
+   *Descripción*
+   1. La aplicación des-serializa datos no confiables, instanciando objetos
+      o invocando métodos arbitrarios
+   2. Datos no validados se envían a un intérprete de comandos del sistema
+      operativo
+   3. Entradas de usuario se incorporan directamente en una consulta de
+      base de datos, alterando su lógica
+   4. La aplicación es engañada para realizar consultas a un destino
+      interno o restringido
+   #+latex: \end{minipage}
+
+# #+latex: \hrulefill \centering
+
+# *¡Mucho éxito!*
+
+# \raggedleft – Gunnar.
